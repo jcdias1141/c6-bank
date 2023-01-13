@@ -1,0 +1,134 @@
+header {
+  height: 7.2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  transition: all 0.3s;
+
+  &.fixed-menu {
+    background-color: $white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.334);
+
+    .logo {
+      background: url("/Images/brand.svg") no-repeat center center !important;
+    }
+    nav {
+      .dropdown {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .menu {
+        li {
+          a {
+            color: $grey !important;
+          }
+        }
+      }
+    }
+    .btn:hover {
+      border: 1px solid $yellow;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    .logo {
+      display: inline-block;
+      width: 120px;
+      height: 24px;
+      background: url("/Images/brand-white.svg") no-repeat center center;
+      background-size: 100%;
+      transition: all 0.3s;
+    }
+
+    nav {
+      position: relative;
+
+      .dropdown {
+        position: absolute;
+        top: 35px;
+        left: -115px;
+        width: 100%;
+        max-width: 440px;
+        height: 300px;
+        background-color: $white;
+        padding: 30px;
+        border-radius: 8px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s;
+
+        //animação ao entrar
+        transform: translateY(-20px);
+
+        &.active {
+          opacity: 1;
+          pointer-events: all;
+          transform: translateY(0px);
+        }
+
+        &::after {
+          content: "";
+          width: 200px;
+          height: 5px;
+          background-color: $yellow;
+          position: absolute;
+          bottom: 0;
+          left: 18%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        .item {
+          &:not(:last-child) {
+            margin-bottom: 28px;
+          }
+          strong {
+            font-weight: 600;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 3px;
+            transition: all 0.3s;
+          }
+          p {
+            opacity: 0.7;
+          }
+          &:hover {
+            strong {
+              opacity: 0.6;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+
+        li {
+          &:not(:first-child) {
+            margin-left: 46px;
+          }
+          a {
+            color: $white;
+            background-image: url("../Images/poligono.svg");
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-right: 30px;
+            transition: color 0.3s;
+
+            &:hover {
+              color: $yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
