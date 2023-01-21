@@ -20,6 +20,12 @@ navTabs.forEach((nav, index) => {
   });
 })
 
+//ANIMATION AOS
+AOS.init({
+  duration: 500
+});
+
+
 //dropdown
 const btnDropdown = document.querySelector('.js-btn-dropdown');
 const dropdown = document.querySelector('.js-dropdown');
@@ -59,10 +65,4 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");  
   navMenu.classList.toggle("active");
 })
-
-
-//ANIMATION AOS
-AOS.init({
-    duration: 500
-});
 

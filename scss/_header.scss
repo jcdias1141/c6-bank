@@ -6,6 +6,10 @@ header {
   z-index: 999;
   transition: all 0.3s;
 
+  @include devices(mobile) {
+    position: absolute;
+  }
+
   &.fixed-menu {
     background-color: $white;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.334);
@@ -49,6 +53,10 @@ header {
 
     nav {
       position: relative;
+
+      @include devices(mobile) {
+        display: none;
+      }
 
       .dropdown {
         position: absolute;

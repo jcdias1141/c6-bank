@@ -1,7 +1,6 @@
 .btn {
   display: inline-block;
   border-radius: 100px;
- 
   transition: all 0.3s;
   text-transform: uppercase;
 
@@ -10,6 +9,10 @@
     color: $primary;
     padding: 11px 50px;
     border: 1px solid transparent;
+
+    @include devices(mobile) {
+      padding: 10px 14px;
+    }
 
     &:hover {
       background-color: $white;

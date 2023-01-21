@@ -1,12 +1,34 @@
-@mixin flex($direction, $align, $justify){
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-}
+@mixin devices ($breakpoint) {
+    //the name of the mixin is devices
 
-@mixin responsive($screenWidth){
-    @media(max-width: $screenWidth){
-        @content;
+    @if $breakpoint==desktop-large {
+        @media only screen and (min-width: 1920px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==desktop {
+        @media only screen and (min-width: 960px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==tabletSmall {
+        @media only screen and (max-width: 1270px) {
+            @content;
+        }
+    }
+
+
+    @if $breakpoint==tablet {
+        @media only screen and (max-width: 769px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==mobile {
+        @media only screen and (max-width: 481px) {
+            @content;
+        }
     }
 }
